@@ -101,6 +101,5 @@
         }
       }
     }
-  },
-  "defaultProject": "ngrx-new"
+  }
 }

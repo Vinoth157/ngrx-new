@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-8">
+    <!-- <button [routerLink]="['/add']">Add</button> -->
+    <a href="#" [routerLink]="['/employees/add']" class="btn btn-primary"
+      >Add</a
+    >
+    <table class="table table-striped">
+      <thead>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Designation</td>
+        <td>Action</td>
+      </thead>
+      <tr *ngFor="let employee of employeeList$ | async">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.experience }}</td>
+        <td>
+          <a href="#" class="btn btn-info" [routerLink]="['edit', employee.id]"
+            >Update</a
+          >
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-md-4">
+    <router-outlet></router-outlet>
+  </div>
+</div>
